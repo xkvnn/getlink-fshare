@@ -17,6 +17,8 @@ getLink.getCookieCsrf().then(() => {
   });
 
   app.post('/', (req, res) => {
+	const body = req.body;
+	console.log("body: " + JSON.stringify(body));
     const linkFS = req.body.link;
     getLink
       .getLink(linkFS)
