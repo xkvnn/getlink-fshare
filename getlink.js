@@ -10,6 +10,7 @@ function getCodeDownload(link) {
 }
 
 function getLink(link) {
+  console.log("Start get link: " + link);
   return new Promise(async (resolve, reject) => {
     if (!cookie || !csrf) return false;
     const codeDownload = getCodeDownload(link);
