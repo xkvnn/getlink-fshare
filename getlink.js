@@ -30,10 +30,7 @@ function getLink(link) {
     const linkDownload = await axios(options);
     const data = linkDownload.data;
     if (data.wait_time === 0) {
-      return resolve({
-        getlink: 'done',
-        link: data.url
-      });
+      return resolve(data);
     } else if (data.wait_time > 0) {
       return reject({
         errors: 'Tải khoản Fshare đang là free'
